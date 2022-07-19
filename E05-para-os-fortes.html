@@ -1,0 +1,49 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<script>
+    //Problema
+    /*
+    Faça um script que peça para o usuário informar o valor recebido por hora trabalhada. Considere que, no mínimo, trabalha 8 horas por dia (08:00 - 12:00 / 13:00 - 17:00), portanto 40 horas na semana.
+    Peça para o usuário também informar quantas horas trabalha entre as 17:00 e 20:00 durante a semana. Será calculado um adicional de 30% para cada hora trabalhada nesse período.
+    Peça também para o usuário informar quantas horas trabalha entre as 20:00 e 22:00 durante a semana. Será calculado um adicional de 50% para cada hora trabalhada nesse período.
+    Se o usuário receber de 30% a 50% em relação ao que recebe no horário normal de trabalho, o programa deverá indicar que é preciso contratar mais um funcionário.
+    Se o usuário receber mais do que 50% em relação ao que recebe no horário normal de trabalho, o programa deverá indicar que é preciso contratar mais dois funcionários.
+    O programa também deverá indicar que, se a quantidade de horas trabalhadas além das 40 previstas para a semana for até 25 horas, o programa deverá indicar que o funcionário está dentro das regras da empresa, caso contrário deverá indicar que ultrapassa as regras da empresa.
+    */
+
+    //Entrada
+    const recebidoPorHora = Number(prompt("Informe quanto é recebido por hora de trabalho"))
+    const TardeSemanal = Number(prompt("informe quantas horas trabalha entre as 17:00 e 20:00 durante a semana"))
+    const NoiteSemanal = Number(prompt("informe quantas horas trabalha entre as 20:00 e 22:00 durante a semana"))
+
+    //Processamento
+    let salaraioSemanal = recebidoPorHora * 8 
+    let adicionalTarde = (TardeSemanal * recebidoPorHora)*0.3 + (TardeSemanal * recebidoPorHora)
+    let adicionalNoite = (NoiteSemanal * recebidoPorHora)*0.5 + (NoiteSemanal * recebidoPorHora)
+    let adicionalTotal = adicionalNoite + adicionalTarde
+    let horasTrabalhadasExtras = TardeSemanal + NoiteSemanal
+   let funcionarios
+    let regrasEmpresa
+
+    if ( (salaraioSemanal * 0.30) <  adicionalTotal ){
+        let funcionarios = "Precisando de um funconario"
+        if (horasTrabalhadasExtras > 25) {regrasEmpresa = "fora das regras"}
+        else if (horasTrabalhadasExtras <= 25 ) {regrasEmpresa = "dentro das regras"}
+    }  
+    else if ( (salaraioSemanal * 0.50) <  adicionalTotal ){
+        let funcionarios = "Precisando de um funconario"
+        if (horasTrabalhadasExtras > 25) {regrasEmpresa = "fora das regras"}
+        else if (horasTrabalhadasExtras <= 25 ) {regrasEmpresa = "dentro das regras"}
+    }
+    else if ( (salaraioSemanal * 0.50) >  adicionalTotal ){
+        let funcionarios = "Precisando de 2 funconario"
+        if (horasTrabalhadasExtras > 25) {regrasEmpresa = "fora das regras"}
+        else if (horasTrabalhadasExtras <= 25 ) {regrasEmpresa = "dentro das regras"}
+    }
+    
+
+    //Saída
+    document.write (`Funcionarios = ${funcionarios}
+    Regras Empresa = ${regrasEmpresa}`)
+
+    
+</script>

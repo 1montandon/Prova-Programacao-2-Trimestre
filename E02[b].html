@@ -1,0 +1,31 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<script>
+    //Problema
+    /*
+    Faça um script que peça para o usuário informar as despesas relacionadas com:
+    - Conta de água
+    - Conta de energia elétrica
+    - Conta de telefone
+    - Supermercado
+    Também peça para o usuário informar o valor que recebe de remuneração mensal (salário), proveniente da sua atuação profissional.
+    Verifique se o usuário ganha mais do que recebe e apresente em tela, indicando quanto que sobrou após o pagamento das contas ou quanto que faltou para poder pagar todas as contas previstas.
+    */
+
+    //Entrada
+    const contaDeAgua = Number(prompt("Informe sua conta de agua em R$ (Ex: R$250.00"))
+    const contaDeEnergia = Number(prompt("Informe sua conta de energia eletrica R$ (Ex: R$250.00"))
+    const contaDeTelefone = Number(prompt("Informe sua conta de telefone em R$ (Ex: R$250.00"))
+    const contaDeMercado = Number(prompt("Informe sua conta de supermercado em R$ (Ex: R$250.00"))
+    const salario = Number(prompt("Informe seu salario em R$ (Ex: R$250.00"))
+    //Processamento
+    let sobraFinalMes
+    const contas = contaDeAgua + contaDeEnergia + contaDeTelefone + contaDeMercado
+    if (contas < salario) {sobraFinalMes =  salario - contas 
+        document.write(`Seu saldo foi postivo, sobrando R$${sobraFinalMes}`)}
+    else {sobraFinalMes = (salario - contas) * -1
+        document.write(`Seu saldo foi negativo, faltando R$${sobraFinalMes} para pagar as contas `)
+    }
+
+    //Saída
+    
+</script>

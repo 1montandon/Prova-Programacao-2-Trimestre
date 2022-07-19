@@ -1,0 +1,27 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<script>
+    //Problema
+    /*
+    Suponha que o usuário terá que fazer uma viagem, e deverá escolher qual o meio de transporte mais barato.
+    Peça para o usuário informar o custo da viagem se realizada de ônibus, o custo da viagem se realizada de avião e o custo da viagem se realizada de carro.
+    Verifique qual é o meio de transporte mais barato e apresente em tela, junto com o custo da viagem.
+    */
+
+    //Entrada
+    const onibus = Number(prompt("Informe o custo da viagem de onibus (Em R$)"))
+    const carro = Number(prompt("Informe o custo da viagem de carro (Em R$)"))
+    const aviao = Number(prompt("Informe o custo da viagem de avião(Em R$)"))
+    //Processamento
+    let maisBarato
+    if (onibus >= carro && carro >= aviao) maisBarato = ` avião, tendo o valor de R$${aviao}`
+    else if ( carro >= onibus && onibus  >= aviao) maisBarato = ` avião, tendo o valor de R$${aviao}`
+    else if ( carro >= aviao  && aviao >= onibus) maisBarato = ` onibus, tendo o valor de R$${onibus}`
+    else if ( aviao >= carro && carro >= onibus) maisBarato = ` onibus, tendo o valor de R$${onibus}`
+    else if ( aviao  >= onibus  && onibus >= carro) maisBarato = ` carro, tendo o valor de R$${carro}`
+    else if ( onibus >= aviao  && aviao >= carro) maisBarato = ` carro, tendo o valor de R$${carro}`
+
+    //
+    document.write (`O meio de transporte mais barato é o ${maisBarato} `)
+
+    
+</script>
